@@ -6,7 +6,7 @@
 
 ## 🚀 Project Overview & Demo
 
-**Live Portfolio:** https://sandip01112004.github.io/prezent-mp/
+**Live Portfolio:** https://sandip01112004.github.io/Prezent-MP/
 
 PreZent is a smart system that replaces manual roll calls with an automated, proximity-based solution. It leverages an ESP32 to detect nearby mobile devices and securely logs their presence for attendance.
 
