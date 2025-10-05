@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Signup</title>
+    <link rel="stylesheet" href="styles/signup.css" />
+</head>
+<body>
+<div class="page-center">
+    <div class="signup-wrapper">
+        <div class="center-logo">
+            <img src="images/WIT_LOGO.png" alt="School logo" />
+        </div>
+        <div class="signup-container">
+            <h2>Student Signup</h2>
+            <p>Please fill in the details to create your account.</p>
+            <form class="signup-form" id="signup-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="name" required />
+                        <label class="form-label" for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="email" required />
+                        <label class="form-label" for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="gender" class="form-input" required>
+                            <option value="" disabled selected hidden></option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="gender" class="form-label">Gender</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="prn" required />
+                        <label class="form-label" for="prn">PRN No</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="roll" required />
+                        <label class="form-label" for="roll">Roll No</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="year" class="form-input" required>
+                            <option value="" disabled selected hidden></option>
+                            <option>First Year</option>
+                            <option>Second Year</option>
+                            <option>Third Year</option>
+                            <option>Fourth Year</option>
+                        </select>
+                        <label for="year" class="form-label">Year of Study</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="branch" class="form-input" required>
+                            <option value="" disabled selected hidden></option>
+                            <option>Computer Science Engineering</option>
+                            <option>Civil Engineering</option>
+                            <option>Mechanical and Automation Engineering</option>
+                            <option>Electronics and Computer Engineering</option>
+                            <option>Electronics and Telecommunication Engineering</option>
+                            <option>Information Technology Engineering</option>
+                        </select>
+                        <label for="branch" class="form-label">Branch</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="division" class="form-input" required>
+                            <option value="" disabled selected hidden></option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                            <option>H</option>
+                            <option>I</option>
+                            <option>J</option>
+                            <option>N/A</option>
+                        </select>
+                        <label for="division" class="form-label">Division</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="bt-available" class="form-input" required>
+                            <option value="" disabled selected hidden></option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                        <label for="bt-available" class="form-label">Device with Bluetooth Available?</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="used-device"/>
+                        <label class="form-label" for="used-device">Device used for Attendance (Not Required)</label>
+                    </div>
+                    <div class="form-group full-width">
+                        <input type="text" class="form-input" id="mac" placeholder=" " />
+                        <label class="form-label" for="mac">Bluetooth MAC Address (48-bit)</label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+
+                <!-- Success or error message -->
+                <div id="loading-indicator" class="hide">Loading...</div>
+                <div class="response-message" id="response-message"></div>
+                <div class="success-message" id="success-message">Account created successfully! Redirecting to login...</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Attendance Portal</title>
+    <link rel="stylesheet" href="styles/landing.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="logo-container">
+        <img src="images/WIT_LOGO.png" alt="School Logo" class="logo">
+        <span class="title"> &nbsp;&nbsp; Attendance Dashboard</span>
+    </div>
+    <nav class="nav-links">
+        <a href="#overview" id="time-table">Overview</a>
+        <a href="#reports">Reports</a>
+        <a href="#profile">Profile</a>
+        <button id="logout-btn" class="logout">Logout</button>
+    </nav>
+</header>
+
+<main class="main-content">
+    <section class="welcome-section">
+        <h1>Welcome!</h1>
+        <p>You have successfully logged in to the Attendance Portal. Use the navigation bar to access your dashboard features.</p>
+    </section>
+    <section class="dashboard-widgets">
+        <div class="widget">
+            <h3>Attendance Summary</h3>
+            <p>View your overall attendance percentage and class-wise breakdown.</p>
+        </div>
+        <div class="widget">
+            <h3>Upcoming Classes</h3>
+            <p>Check your schedule for today and tomorrow.</p>
+        </div>
+        <div class="widget">
+            <h3>Messages</h3>
+            <p>See notifications from teachers or the admin.</p>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 WIT Attendance Portal. All rights reserved.</p>
+</footer>
+<script>
+    function showImage(event) {
+      event.preventDefault(); // Prevent the link from navigating
+      const img = document.createElement('img');
+      img.src = 'images/Time-table.png'; // Replace with your image URL
+      img.style.position = 'absolute'; // Position the image as needed
+      img.style.top = '50%';
+      img.style.left = '50%';
+      img.style.transform = 'translate(-50%, -50%)';
+      img.style.zIndex = '1000'; // Ensure it's on top
+      document.body.appendChild(img);
+
+      // Optional: Add a close button or click-away functionality
+      img.addEventListener('click', () => {
+        img.remove();
+      });
+    }
+
+    const link = document.getElementById('time-table');
+    link.addEventListener('click', showImage);
+  </script>
+<script src="./script/landing.js"></script>
+</body>
+</html>

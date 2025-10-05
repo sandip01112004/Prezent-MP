@@ -1,0 +1,25 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+node_modules/
+backend/.env
+npm-debug.log
+.DS_Store
+*.log
+*.lock
+dump/
+data/
+*.elf
+*.bin
+*.hex
+*.eep
+*.d
+*.o
+*.map
+*.a
+build/
+# Sensitive teacher info
+backend/teachers.json
+backend/addTeachers.js

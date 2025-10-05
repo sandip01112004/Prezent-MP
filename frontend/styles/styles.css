@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #3E7CB1, #81A4CD);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: #DBE4EE;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    width: 90%;
+    max-width: 800px;
+    min-height: 500px;
+    display: flex;
+    overflow: hidden;
+}
+
+.left-panel {
+    background: linear-gradient(135deg, #054A91, #3E7CB1);
+    color: white;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.left-panel h1 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.left-panel p {
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.school-logo {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.form-container {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+    justify-content: center;
+    border: 2px solid #054A91;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 320px;
+}
+
+.toggle-btn {
+    background-color: #DBE4EE;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    text-align: center;
+}
+
+.toggle-btn:first-child {
+    border-radius: 20px 0 0 20px;
+}
+
+.toggle-btn:last-child {
+    border-radius: 0 20px 20px 0;
+}
+
+.active-toggle {
+    background-color: #054A91;
+    color: white;
+}
+
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #3E7CB1;
+}
+
+.form-label {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: #777;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+    top: -20px;
+    left: 0;
+    color: #054A91;
+    font-size: 12px;
+}
+
+.submit-btn {
+    background-color: #FFB570;
+    color: #054A91;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 45px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 10px;
+}
+.submit-btn:hover {
+    transform: scale(1.05);
+}
+
+.forgot-password {
+    margin-top: 15px;
+    color: #777;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: #3E7CB1;
+    text-decoration: underline;
+}
+.error-message {
+    color: #ff4d4d;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+.signup-btn {
+    background-color: transparent;
+    border: 2px solid #054A91;
+    color: #054A91;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #054A91;
+    color: white;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        margin: 20px 0;
+    }
+
+    .left-panel {
+        padding: 30px 20px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+}

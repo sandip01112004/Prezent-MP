@@ -1,0 +1,88 @@
+<!-- Updated HTML with Student Signup as a Button -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Portal</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="left-panel">
+        <h1>Welcome to Attendance Portal</h1>
+        <p>Access your attendance details by logging in to your account.</p>
+        <img src="images/WIT_LOGO.png" alt="School logo" class="school-logo">
+    </div>
+    <div class="form-container">
+        <div class="toggle-container">
+            <button id="student-toggle" class="toggle-btn active-toggle">Student</button>
+            <button id="teacher-toggle" class="toggle-btn">Teacher</button>
+        </div>
+
+        <form id="student-form" class="login-form">
+            <h2>Student Login</h2>
+            <div class="form-group">
+                <input type="text" id="student-id" class="form-input" placeholder=" " required>
+                <label for="student-id" class="form-label">Student ID</label>
+            </div>
+            <!-- Replace Password input with MAC input -->
+            <div class="form-group">
+                <input type="text" id="student-mac" class="form-input" placeholder=" " required>
+                <label for="student-mac" class="form-label">Bluetooth MAC Address</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Login</button>
+            <a href="signup.html" class="signup-btn-link">
+                <button type="button" class="submit-btn">Sign Up</button>
+            </a>
+            <div id="student-success" class="message success"></div>
+            <div class="error-message" id="student-error"></div>
+        </form>
+
+        <form id="teacher-form" class="login-form hidden">
+            <h2>Teacher Login</h2>
+            <div class="form-group">
+                <input type="email" id="teacher-email" class="form-input" placeholder=" " required>
+                <label for="teacher-email" class="form-label">Email</label>
+            </div>
+            <div class="form-group">
+                <input type="password" id="teacher-password" class="form-input" placeholder=" " required>
+                <label for="teacher-password" class="form-label">Password</label>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <a href="#" class="forgot-password">Forgot password?</a>
+            <div id="teacher-success" class="success-message"></div>
+            <div class="error-message" id="teacher-error"></div>
+        </form>
+
+        <!-- Student Signup Modal Only -->
+        <div id="signup-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-btn" id="close-signup">&times;</span>
+                <h2>Create Student Account</h2>
+                <form id="signup-form">
+                    <div class="form-group">
+                        <input type="text" id="signup-name" class="form-input" placeholder=" " required>
+                        <label for="signup-name" class="form-label">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="signup-email" class="form-input" placeholder=" " required>
+                        <label for="signup-email" class="form-label">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signup-password" class="form-input" placeholder=" " required>
+                        <label for="signup-password" class="form-label">Password</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Sign Up</button>
+                    <div class="error-message" id="signup-error"></div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="script/script.js"></script>
+</body>
+</html>
