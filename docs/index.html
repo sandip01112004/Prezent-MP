@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreZent | Smart Bluetooth Presence Detection</title>
+    <link rel="stylesheet" href="portfolio-styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Embed temporary CSS for quick view of structure before providing full file */
+        body { font-family: 'Roboto', sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
+        .hero { background: linear-gradient(135deg, #054A91, #3E7CB1); color: white; padding: 100px 50px; text-align: center; }
+        .hero h1 { font-size: 3em; margin-bottom: 10px; }
+        .hero p { font-size: 1.2em; max-width: 800px; margin: 0 auto; }
+        nav { background-color: #054A91; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: #FFB570; }
+        section { padding: 50px; max-width: 1000px; margin: 0 auto; background-color: white; margin-top: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+        section h2 { color: #054A91; border-bottom: 3px solid #FFB570; padding-bottom: 10px; margin-bottom: 30px; }
+        .architecture-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: left; }
+        .arch-step { border-left: 4px solid #3E7CB1; padding-left: 15px; margin-bottom: 20px; }
+        .arch-step h3 { margin-top: 0; color: #3E7CB1; }
+        .feature-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .feature-list li { background-color: #DBE4EE; padding: 15px; border-radius: 5px; font-weight: 500; }
+        .tech-icons { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+        .tech-icons span { font-size: 1.2em; font-weight: bold; color: #3E7CB1; }
+        .tech-icons img { width: 50px; height: 50px; object-fit: contain; margin-bottom: 5px; }
+        .tech-item { text-align: center; }
+        .contact-section { text-align: center; margin-top: 40px; }
+        .contact-section a { display: inline-block; background-color: #FFB570; color: #054A91; padding: 10px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; margin: 0 10px; transition: background-color 0.3s; }
+        .contact-section a:hover { background-color: #f7a759; }
+        .demo-img-container { text-align: center; margin-top: 30px;}
+        .demo-img-container img { max-width: 90%; height: auto; border: 5px solid #DBE4EE; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div style="color: white; font-weight: bold;">PreZent</div>
+        <div>
+            <a href="#about">About</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#demo">Demo</a>
+            <a href="#tech">Technologies</a>
+            <a href="#docs">Docs & Code</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>PreZent: Smart Bluetooth Attendance System</h1>
+        <p>A reliable, automated system leveraging ESP32 Bluetooth Low Energy (BLE) scanning, Node.js, and MongoDB to simplify student presence detection and management.</p>
+        <div class="contact-section" style="margin-top: 30px;">
+            <a href="#docs">View Code</a>
+            <a href="frontend/index.html" target="_blank">Access Portal Demo</a> 
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>Project Overview: What is PreZent?</h2>
+        <div class="architecture-grid" style="grid-template-columns: 1fr;">
+            <div>
+                <h3>Problem Statement</h3>
+                <p>Traditional attendance systems are time-consuming and prone to human error or proxy attendance. An automated, proximity-based solution is needed for efficient and accurate class attendance logging.</p>
+            </div>
+        </div>
+        
+        <div class="architecture-grid">
+            <div class="arch-step">
+                <h3>Objectives</h3>
+                <ul>
+                    <li>Develop a **Bluetooth-based presence detection system** using ESP32.</li>
+                    <li>Design a secure **web portal (MERN Stack)** for faculty and students.</li>
+                    <li>Ensure **accurate, real-time logging** of presence data to MongoDB.</li>
+                    <li>Provide a mechanism for students to **register their unique Bluetooth MAC address**.</li>
+                </ul>
+            </div>
+            <div class="arch-step">
+                <h3>Workflow (The Smart Loop)</h3>
+                <ol>
+                    <li>**Setup:** Faculty starts a lecture on the portal. The ESP32 is triggered.</li>
+                    <li>**Scan:** The **ESP32** scans for all nearby Bluetooth Low Energy (BLE) devices.</li>
+                    <li>**Transmit:** The ESP32 sends the list of scanned **MAC addresses** and signal strength to the Node.js Backend via Wi-Fi.</li>
+                    <li>**Verify:** The Node.js Backend validates the MAC addresses against the **hashed MACs** stored in the MongoDB database.</li>
+                    <li>**Log:** Attendance is marked for recognized students in real-time.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <h3>Key Features</h3>
+            <ul class="feature-list">
+                <li>**Automated Presence:** Eliminates manual roll call, saving time.</li>
+                <li>**Secure Registration:** Students register a single, unique MAC (hashed for privacy).</li>
+                <li>**Role-Based Access:** Separate login/dashboards for Students and Teachers.</li>
+                <li>**Full-Stack Solution:** Includes hardware interface, API, and web interface.</li>
+                <li>**Uniqueness Check:** Prevents duplicate PRN and email registration.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="architecture">
+        <h2>System Architecture: MERN Stack & ESP32</h2>
+        <div class="architecture-grid">
+            <div>
+                <h3 style="margin-top:0;">Frontend (Client)</h3>
+                <p>Built with plain **HTML, CSS, and JavaScript**. Provides an intuitive portal for student signup, login, and viewing the **Attendance Dashboard**.</p>
+            </div>
+            <div>
+                <h3 style="margin-top:0;">Backend (API & Logic)</h3>
+                <p>A **Node.js/Express** server exposing RESTful APIs. It handles user authentication, data validation, and manages connections to the MongoDB database. It is the crucial link between the hardware and the data layer.</p>
+            </div>
+        </div>
+        <div class="architecture-grid">
+            <div>
+                <h3>Database (Data Layer)</h3>
+                <p>Uses **MongoDB** (NoSQL) to store student credentials (hashed MAC, PRN, details) and lecture data, offering flexibility and scalability.</p>
+            </div>
+            <div>
+                <h3>Hardware Interface</h3>
+                <p>An **ESP32 microcontroller** acts as the Bluetooth scanner, capturing BLE advertisements from student devices and communicating the raw data to the backend via a dedicated POST API endpoint.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="demo">
+        <h2>Demo & Flow Visuals</h2>
+        <p style="text-align: center;">The core functionality revolves around student and teacher interactions with the attendance portal. Below is a mock of the student flow.</p>
+
+        <div class="demo-img-container">
+             <h3>Student Dashboard Preview</h3>
+            <p>Once logged in, students can access their dashboard, attendance summary, and class schedule. (Mock timetable displayed)</p>
+            <img src="frontend/images/Time-table.png" alt="Student Time Table Demo" style="max-width: 600px;">
+        </div>
+         <div class="demo-img-container">
+            <h3>Login Interface</h3>
+            <p>Students and Teachers log in via separate tabs using either (PRN/MAC) or (Email/Password).</p>
+            <img src="frontend/images/WIT_LOGO.png" alt="Login Interface Mock" style="max-width: 200px;">
+        </div>
+    </section>
+
+    <section id="tech">
+        <h2>Technologies Used</h2>
+        <div class="tech-icons">
+            <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="Node.js"><span>Node.js</span></div>
+            <div class="tech-item"><img src="https://expressjs.com/images/express-facebook-share.png" alt="Express.js"><span>Express.js</span></div>
+            <div class="tech-item"><img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/6/69/ESP32-DevKitC_V4.png" alt="ESP32"><span>ESP32 (Hardware)</span></div>
+            <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Bluetooth_logo.svg" alt="Bluetooth"><span>Bluetooth/BLE</span></div>
+            <div class="tech-item"><img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Javascript-logo.png" alt="JavaScript"><span>JavaScript (Frontend)</span></div>
+        </div>
+    </section>
+
+    <section id="docs">
+        <h2>Code, Documentation & Future Scope</h2>
+        <p>This project is ready to run locally using the instructions provided in the repository's README.</p>
+        
+        <h3>Future Scope</h3>
+        <ul style="list-style: disc; margin-left: 20px;">
+            <li>Implement **JWT** (JSON Web Tokens) for more secure session management (currently uses simple token strings).</li>
+            <li>Develop a dedicated **Teacher Dashboard** to manage lectures and view real-time attendance status.</li>
+            <li>Use **RSSI (Received Signal Strength Indication)** filtering to ensure the student device is within a defined proximity range for attendance.</li>
+            <li>Integrate the **Web Bluetooth API** (if possible) for the student registration process.</li>
+        </ul>
+        
+        <div class="contact-section">
+            <a href="https://github.com/sandip01112004/prezent-mp" target="_blank">View GitHub Repository</a>
+            <a href="mailto:your_email@example.com">Contact Developer</a>
+        </div>
+    </section>
+</body>
+</html>

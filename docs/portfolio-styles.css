@@ -1,0 +1,226 @@
+/* portfolio-styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    background-color: #054A91;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #FFB570;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #054A91, #3E7CB1);
+    color: white;
+    padding: 100px 50px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    font-weight: 300;
+}
+
+/* General Section Styling */
+section {
+    padding: 50px;
+    max-width: 1000px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+section h2 {
+    color: #054A91;
+    border-bottom: 3px solid #FFB570;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Architecture and Overview Grids */
+.architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.arch-step {
+    border-left: 4px solid #3E7CB1;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.arch-step h3 {
+    margin-top: 0;
+    color: #3E7CB1;
+    font-weight: 600;
+}
+
+.arch-step ul, .arch-step ol {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.feature-list li {
+    background-color: #DBE4EE;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Tech Icons */
+#tech {
+    text-align: center;
+}
+.tech-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.tech-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tech-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.tech-item span {
+    font-size: 1em;
+    font-weight: bold;
+    color: #054A91;
+}
+
+/* Demo Section */
+.demo-img-container {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #DBE4EE;
+    border-radius: 8px;
+}
+
+.demo-img-container h3 {
+    color: #3E7CB1;
+    margin-bottom: 10px;
+}
+
+.demo-img-container img {
+    max-width: 100%;
+    height: auto;
+    border: 5px solid #DBE4EE;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.demo-img-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Call to Action/Contact */
+.contact-section {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.contact-section a {
+    display: inline-block;
+    background-color: #FFB570;
+    color: #054A91;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-section a:hover {
+    background-color: #f7a759;
+    transform: translateY(-2px);
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+    nav div:last-child {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+    nav a {
+        margin: 5px 10px 5px 0;
+    }
+    section {
+        padding: 30px 20px;
+    }
+}
